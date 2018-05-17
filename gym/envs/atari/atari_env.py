@@ -41,7 +41,7 @@ class AtariEnv(gym.Env, utils.EzPickle):
 
         self.seed()
 
-        self._action_set = self.ale.getMinimalActionSet()
+        self._action_set = self.ale.getLegalActionSet()
         self.action_space = spaces.Discrete(len(self._action_set))
 
         (screen_width,screen_height) = self.ale.getScreenDims()
